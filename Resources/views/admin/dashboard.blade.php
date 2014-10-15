@@ -12,6 +12,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
+        @include('flash::message')
         <p>{{ trans('dashboard::dashboard.welcome-message') }}</p>
     </div>
 </div>
