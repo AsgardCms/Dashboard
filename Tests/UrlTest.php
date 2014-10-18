@@ -1,4 +1,4 @@
-<?php
+<?php namespace Modules\Dashboard\Tests;
 
 use Cartalyst\Sentinel\Laravel\Facades\Sentinel;
 use Modules\Core\Tests\BaseTestCase;
