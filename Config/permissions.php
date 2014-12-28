@@ -1,6 +1,6 @@
 <?php
 return [
     'dashboard' => [
-        'index'
+        'index',
     ]
 ];
