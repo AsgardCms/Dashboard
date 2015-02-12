@@ -2,5 +2,5 @@
 return [
     'dashboard' => [
         'index',
-    ]
+    ],
 ];

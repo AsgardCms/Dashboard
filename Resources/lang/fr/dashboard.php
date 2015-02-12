@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'welcome-message' => 'Bienvenue sur votre dashboard'
+    'welcome-message' => 'Bienvenue sur votre dashboard',
 ];

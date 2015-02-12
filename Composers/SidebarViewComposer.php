@@ -13,7 +13,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
             'route' => 'dashboard.index',
             'icon-class' => 'fa fa-dashboard',
             'title' => 'Dashboard',
-            'permission' => $this->auth->hasAccess('dashboard.index')
+            'permission' => $this->auth->hasAccess('dashboard.index'),
         ]);
     }
 }
