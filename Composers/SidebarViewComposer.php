@@ -1,19 +1,26 @@
 <?php namespace Modules\Dashboard\Composers;
 
 use Illuminate\Contracts\View\View;
+use Maatwebsite\Sidebar\SidebarGroup;
+use Maatwebsite\Sidebar\SidebarItem;
 use Modules\Core\Composers\BaseSidebarViewComposer;
 
 class SidebarViewComposer extends BaseSidebarViewComposer
 {
     public function compose(View $view)
     {
-        $view->items->put('dashboard', [
-            'weight' => 0,
-            'request' => "*/$view->prefix",
-            'route' => 'dashboard.index',
-            'icon-class' => 'fa fa-dashboard',
-            'title' => 'Dashboard',
-            'permission' => $this->auth->hasAccess('dashboard.index'),
-        ]);
+        $view->sidebar->group('Dashboard', function (SidebarGroup $group) {
+            $group->enabled = false;
+
+            $group->addItem('Dashboard', function (SidebarItem $item) {
+                $item->route('dashboard.index');
+                $item->icon = 'fa fa-dashboard';
+                $item->name = 'Dashboard';
+                $item->authorize(
+                    $this->auth->hasAccess('dashboard.index')
+                );
+            });
+
+        });
     }
 }
