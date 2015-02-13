@@ -10,6 +10,7 @@ class SidebarViewComposer extends BaseSidebarViewComposer
     public function compose(View $view)
     {
         $view->sidebar->group('Dashboard', function (SidebarGroup $group) {
+            $group->weight = 0;
             $group->enabled = false;
 
             $group->addItem('Dashboard', function (SidebarItem $item) {
