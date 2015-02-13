@@ -14,6 +14,8 @@ class SidebarViewComposer extends BaseSidebarViewComposer
             $group->enabled = false;
 
             $group->addItem('Dashboard', function (SidebarItem $item) {
+                $prefix = config('asgard.core.core.admin-prefix');
+                $item->active = "*/{$prefix}";
                 $item->route('dashboard.index');
                 $item->icon = 'fa fa-dashboard';
                 $item->name = 'Dashboard';
