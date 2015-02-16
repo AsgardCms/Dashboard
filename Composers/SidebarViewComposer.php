@@ -10,18 +10,20 @@ class SidebarViewComposer extends BaseSidebarViewComposer
 {
     public function compose(View $view)
     {
-        $view->sidebar->group('Dashboard', function (SidebarGroup $group) {
+        $view->sidebar->group(trans('dashboard::dashboard.name'), function (SidebarGroup $group) {
             $group->weight = 0;
-            $group->enabled = false;
+            $group->hideHeading();
 
-            $group->addItem('Dashboard', function (SidebarItem $item) {
-                $prefix = config('asgard.core.core.admin-prefix');
-                $item->active = Request::is("*/{$prefix}");
-                $item->route('dashboard.index');
+            $group->addItem(trans('dashboard::dashboard.name'), function (SidebarItem $item) {
                 $item->icon = 'fa fa-dashboard';
-                $item->name = 'Dashboard';
+                $item->route('dashboard.index');
                 $item->authorize(
                     $this->auth->hasAccess('dashboard.index')
+                );
+
+                $prefix = config('asgard.core.core.admin-prefix');
+                $item->isActiveWhen(
+                    Request::is("*/{$prefix}")
                 );
             });
 
