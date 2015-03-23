@@ -4,7 +4,7 @@
     "description": "The module responsible for the admin dashboard page.",
     "keywords": [],
     "active": 1,
-    "priority": 1,
+    "order": 1,
     "providers": [
         "Modules\\Dashboard\\Providers\\RouteServiceProvider"
     ],
