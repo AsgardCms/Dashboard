@@ -12,6 +12,8 @@
     "tests"
   ],
   "dependencies": {
-    "gridstack": "~0.2.2"
+    "lodash": "~3.6.0",
+    "gridstack": "~0.2.2",
+    "jquery-ui": "~1.11.4"
   }
 }
