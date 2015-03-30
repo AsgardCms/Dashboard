@@ -16,47 +16,43 @@
         </div>
     </div>
     <div class="row">
-        <?php if (isset($widgets)): ?>
-        <?php foreach($widgets as $widget): ?>
-        <div class="{{ $widget['type'] }}">
-            {!! $widget['html'] !!}
+        <div class="grid-stack grid-stack-6069 grid-stack-animate">
+            <?php if (isset($widgets)): ?>
+            <?php foreach($widgets as $widget): ?>
+            <div class="grid-stack-item"
+                 data-gs-no-resize="1"
+                 data-gs-x="{{ isset($widget['options']['x']) ? $widget['options']['x'] : 2 }}"
+                 data-gs-y="{{ isset($widget['options']['y']) ? $widget['options']['y'] : 0 }}"
+                 data-gs-width="{{ isset($widget['options']['width']) ? $widget['options']['width'] : 2 }}"
+                 data-gs-height="{{ isset($widget['options']['width']) ? $widget['options']['width'] : 1 }}">
+                <div class="grid-stack-item-content">
+                    {!! $widget['html'] !!}
+                </div>
+            </div>
+            <?php endforeach; ?>
+            <?php endif; ?>
         </div>
-        <?php endforeach; ?>
-        <?php endif; ?>
     </div>
     <div class="clearfix"></div>
-    <div class="row">
-        <div class="grid-stack grid-stack-6069 grid-stack-animate">
-            <div class="grid-stack-item"
-                 data-gs-x="0" data-gs-y="0"
-                 data-gs-width="4" data-gs-height="10">
-                <div class="grid-stack-item-content">
-                    <div style="background: red">
-                        asdasd
-                    </div>
-                </div>
-            </div>
-            <div class="grid-stack-item"
-                 data-gs-x="4" data-gs-y="0"
-                 data-gs-width="4" data-gs-height="4">
-                <div class="grid-stack-item-content">
-                    <div style="background: blue">
-                        asdasd
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 @stop
 
 @section('scripts')
     <script type="text/javascript">
-        $(function () {
+        $(document).ready(function () {
             var options = {
                 cell_height: 80,
                 vertical_margin: 10
             };
             $('.grid-stack').gridstack(options);
+
+
+            var serialize_widget_map = function (items) {
+                console.log(items);
+            };
+
+            $('.grid-stack').on('change', function (e, items) {
+                serialize_widget_map(items);
+            });
         });
     </script>
 @stop
