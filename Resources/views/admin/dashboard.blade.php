@@ -16,10 +16,12 @@
         </div>
     </div>
     <div class="row">
-        <?php foreach($widgets as $widget): ?>
-        <div class="{{ $widget['type'] }}">
-            {!! $widget['html'] !!}
-        </div>
-        <?php endforeach; ?>
+        <?php if (isset($widgets)): ?>
+            <?php foreach($widgets as $widget): ?>
+            <div class="{{ $widget['type'] }}">
+                {!! $widget['html'] !!}
+            </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 @stop
