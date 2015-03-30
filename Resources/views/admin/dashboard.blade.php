@@ -17,24 +17,33 @@
     </div>
     <div class="row">
         <?php if (isset($widgets)): ?>
-            <?php foreach($widgets as $widget): ?>
-            <div class="{{ $widget['type'] }}">
-                {!! $widget['html'] !!}
-            </div>
-            <?php endforeach; ?>
+        <?php foreach($widgets as $widget): ?>
+        <div class="{{ $widget['type'] }}">
+            {!! $widget['html'] !!}
+        </div>
+        <?php endforeach; ?>
         <?php endif; ?>
     </div>
+    <div class="clearfix"></div>
     <div class="row">
-        <div class="grid-stack">
+        <div class="grid-stack grid-stack-6069 grid-stack-animate">
             <div class="grid-stack-item"
                  data-gs-x="0" data-gs-y="0"
-                 data-gs-width="4" data-gs-height="2">
-                <div class="grid-stack-item-content">asdasd</div>
+                 data-gs-width="4" data-gs-height="10">
+                <div class="grid-stack-item-content">
+                    <div style="background: red">
+                        asdasd
+                    </div>
+                </div>
             </div>
             <div class="grid-stack-item"
                  data-gs-x="4" data-gs-y="0"
                  data-gs-width="4" data-gs-height="4">
-                <div class="grid-stack-item-content">asdasd</div>
+                <div class="grid-stack-item-content">
+                    <div style="background: blue">
+                        asdasd
+                    </div>
+                </div>
             </div>
         </div>
     </div>
