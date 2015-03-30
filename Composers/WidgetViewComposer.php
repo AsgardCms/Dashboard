@@ -31,14 +31,14 @@ class WidgetViewComposer
     }
 
     /**
-     * Add the widget type to the given widget name
-     * @param string $name
-     * @param string $type
+     * Add widget options to the given widget name
+     * @param $name
+     * @param array $options
      * @return $this
      */
-    public function addWidgetType($name, $type)
+    public function addWidgetOptions($name, array $options)
     {
-        $this->subViews[$name]['type'] = $type;
+        $this->subViews[$name]['options'] = $options;
 
         return $this;
     }

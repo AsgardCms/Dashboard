@@ -21,7 +21,7 @@ abstract class BaseWidget
 
             $widgetViewComposer
                 ->addSubView($this->name(), $html)
-                ->addWidgetType($this->name(), $this->type());
+                ->addWidgetOptions($this->name(), $this->options());
         }
 
         $view->composer('dashboard::admin.dashboard', 'Modules\Dashboard\Composers\WidgetViewComposer');
@@ -37,7 +37,7 @@ abstract class BaseWidget
      * Get the widget type
      * @return string
      */
-    abstract protected function type();
+    abstract protected function options();
 
     /**
      * Get the widget view
