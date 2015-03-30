@@ -10,6 +10,6 @@ class DashboardController extends AdminBaseController
         $this->assetPipeline->requireJs('gridstack.js');
         $this->assetPipeline->requireCss('gridstack.css')->before('asgard.css');
 
-        return View::make('dashboard::admin.dashboard');
+        return view('dashboard::admin.dashboard');
     }
 }
