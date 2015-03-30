@@ -1,0 +1,17 @@
+{
+  "name": "Dashboard Module",
+  "version": "1.0.0",
+  "description": "Dashboard module",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "/assets/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gridstack": "~0.2.2"
+  }
+}
