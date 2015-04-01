@@ -1,7 +1,6 @@
 <?php namespace Modules\Dashboard\Foundation\Widgets;
 
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Support\ServiceProvider;
 
 abstract class BaseWidget
 {

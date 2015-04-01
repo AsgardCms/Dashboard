@@ -18,7 +18,7 @@
     <div class="row">
         <div class="grid-stack grid-stack-6069 grid-stack-animate">
             <?php if (isset($widgets)): ?>
-            <?php foreach($widgets as $widget): ?>
+            <?php foreach ($widgets as $widget): ?>
             <div class="grid-stack-item"
                  data-gs-no-resize="1"
                  data-gs-x="{{ isset($widget['options']['x']) ? $widget['options']['x'] : 2 }}"
