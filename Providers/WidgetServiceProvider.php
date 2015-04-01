@@ -13,16 +13,4 @@ class WidgetServiceProvider extends ServiceProvider
             return new WidgetViewComposer();
         });
     }
-
-    public function boot()
-    {
-        foreach ($this->app['modules']->enabled() as $module) {
-            if ( ! $module->widgets) {
-                continue;
-            }
-            foreach ($module->widgets as $widgetClass) {
-                app($widgetClass)->boot();
-            }
-        }
-    }
 }
