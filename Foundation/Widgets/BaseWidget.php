@@ -19,6 +19,7 @@ abstract class BaseWidget
                          ->render();
 
             $widgetViewComposer
+                ->setWidgetName($this->name())
                 ->addSubView($this->name(), $html)
                 ->addWidgetOptions($this->name(), $this->options());
         }
