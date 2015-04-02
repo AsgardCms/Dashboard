@@ -42,4 +42,16 @@ class WidgetViewComposer
 
         return $this;
     }
+
+    /**
+     * Set the widget name
+     * @param string $name
+     * @return $this
+     */
+    public function setWidgetName($name)
+    {
+        $this->subViews[$name]['name'] = $name;
+
+        return $this;
+    }
 }
