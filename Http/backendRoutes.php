@@ -1,3 +1,9 @@
 <?php
 
+use Illuminate\Routing\Router;
+
 $router->get('/', ['as' => 'dashboard.index', 'uses' => 'DashboardController@index']);
+
+$router->group(['prefix' => '/dashboard'], function (Router $router) {
+    $router->post('grid', ['as' => 'dashboard.grid.save', 'uses' => 'DashboardController@save']);
+});
