@@ -1,6 +1,7 @@
 <?php
 return [
-    'dashboard' => [
+    'dashboard.grid' => [
         'index',
+        'save',
     ],
 ];
