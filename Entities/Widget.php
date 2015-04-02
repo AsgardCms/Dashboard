@@ -1,6 +1,8 @@
 <?php namespace Modules\Dashboard\Entities;
 
-class Widget
+use Illuminate\Database\Eloquent\Model;
+
+class Widget extends Model
 {
     protected $fillable = ['widgets', 'user_id'];
     protected $table = 'dashboard__widgets';
