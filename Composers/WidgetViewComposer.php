@@ -50,7 +50,7 @@ class WidgetViewComposer
      */
     public function setWidgetName($name)
     {
-        $this->subViews[$name]['name'] = $name;
+        $this->subViews[$name]['id'] = $name;
 
         return $this;
     }
