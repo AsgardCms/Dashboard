@@ -11,4 +11,20 @@ class CacheWidgetDecorator extends BaseCacheDecorator implements WidgetRepositor
         $this->entityName = 'dashboard.widgets';
         $this->repository = $widgets;
     }
+
+    /**
+     * Find the saved state of widgets for the given user id
+     * @param int $userId
+     * @return string
+     */
+    public function findForUser($userId)
+    {
+        return $this->cache
+            ->tags($this->entityName, 'global')
+            ->remember("{$this->locale}.{$this->entityName}.findForUser.{$userId}", $this->cacheTime,
+                function () use ($userId) {
+                    return $this->repository->findForUser($userId);
+                }
+            );
+    }
 }
