@@ -27,4 +27,20 @@ class CacheWidgetDecorator extends BaseCacheDecorator implements WidgetRepositor
                 }
             );
     }
+
+    /**
+     * Update or create the given widgets for given user
+     * @param array $widgets
+     * @return void
+     */
+    public function updateOrCreateForUser($widgets, $userId)
+    {
+        return $this->cache
+            ->tags($this->entityName, 'global')
+            ->remember("{$this->locale}.{$this->entityName}.updateOrCreateForUser.{$userId}", $this->cacheTime,
+                function () use ($widgets, $userId) {
+                    return $this->repository->updateOrCreateForUser($widgets, $userId);
+                }
+            );
+    }
 }

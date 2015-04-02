@@ -10,4 +10,11 @@ interface WidgetRepository extends BaseRepository
      * @return string
      */
     public function findForUser($userId);
+
+    /**
+     * Update or create the given widgets for given user
+     * @param array $widgets
+     * @return void
+     */
+    public function updateOrCreateForUser($widgets, $userId);
 }
