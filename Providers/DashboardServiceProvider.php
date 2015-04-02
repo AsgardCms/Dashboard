@@ -1,6 +1,9 @@
 <?php namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Modules\Dashboard\Repositories\Cache\CacheWidgetDecorator;
+use Modules\Dashboard\Entities\Widget;
+use Modules\Dashboard\Repositories\Eloquent\EloquentWidgetRepository;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -18,7 +21,18 @@ class DashboardServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            'Modules\Dashboard\Repositories\WidgetRepository',
+            function () {
+                $repository = new EloquentWidgetRepository(new Widget());
+
+                if (! config('app.cache')) {
+                    return $repository;
+                }
+
+                return new CacheWidgetDecorator($repository);
+            }
+        );
     }
 
     /**
