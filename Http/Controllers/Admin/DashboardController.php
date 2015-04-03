@@ -41,7 +41,7 @@ class DashboardController extends AdminBaseController
 
         $widget = $this->widget->findForUser($this->auth->check()->id);
 
-        $customWidgets = json_encode([]);
+        $customWidgets = json_encode(null);
         if ($widget) {
             $customWidgets = $widget->widgets;
         }
@@ -72,7 +72,11 @@ class DashboardController extends AdminBaseController
      */
     public function reset()
     {
+        $widget = $this->widget->findForUser($this->auth->check()->id);
 
+        $this->widget->destroy($widget);
+
+        return redirect()->route('dashboard.index')->with('success', 'Dashboard has been reset');
     }
 
     /**
