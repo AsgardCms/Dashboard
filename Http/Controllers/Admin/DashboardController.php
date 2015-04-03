@@ -1,28 +1,70 @@
 <?php namespace Modules\Dashboard\Http\Controllers\Admin;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
+use Modules\Core\Contracts\Authentication;
 use Modules\Core\Http\Controllers\Admin\AdminBaseController;
+use Modules\Dashboard\Repositories\WidgetRepository;
 use Pingpong\Modules\Repository;
 
 class DashboardController extends AdminBaseController
 {
-    public function __construct(Repository $modules)
+    /**
+     * @var WidgetRepository
+     */
+    private $widget;
+    /**
+     * @var Authentication
+     */
+    private $auth;
+
+    /**
+     * @param Repository $modules
+     * @param WidgetRepository $widget
+     * @param Authentication $auth
+     */
+    public function __construct(Repository $modules, WidgetRepository $widget, Authentication $auth)
     {
         parent::__construct();
         $this->bootWidgets($modules);
+        $this->widget = $widget;
+        $this->auth = $auth;
     }
 
+    /**
+     * Display the dashboard with its widgets
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
-        $this->assetPipeline->requireJs('lodash.js');
-        $this->assetPipeline->requireJs('jquery-ui-core.js');
-        $this->assetPipeline->requireJs('jquery-ui-widget.js');
-        $this->assetPipeline->requireJs('jquery-ui-mouse.js');
-        $this->assetPipeline->requireJs('jquery-ui-draggable.js');
-        $this->assetPipeline->requireJs('jquery-ui-resizable.js');
-        $this->assetPipeline->requireJs('gridstack.js');
-        $this->assetPipeline->requireCss('gridstack.css')->before('asgard.css');
+        $this->requireAssets();
 
-        return view('dashboard::admin.dashboard');
+        $widget = $this->widget->findForUser($this->auth->check()->id);
+
+        $customWidgets = json_encode([]);
+        if ($widget) {
+            $customWidgets = $widget->widgets;
+        }
+
+        return view('dashboard::admin.dashboard', compact('customWidgets'));
+    }
+
+    /**
+     * Save the current state of the widgets
+     * @param Request $request
+     * @return mixed
+     */
+    public function save(Request $request)
+    {
+        $widgets = $request->get('grid');
+
+        if (empty($widgets)) {
+            return Response::json([false]);
+        }
+
+        $this->widget->updateOrCreateForUser($widgets, $this->auth->check()->id);
+
+        return Response::json([true]);
     }
 
     /**
@@ -32,12 +74,27 @@ class DashboardController extends AdminBaseController
     private function bootWidgets(Repository $modules)
     {
         foreach ($modules->enabled() as $module) {
-            if (! $module->widgets) {
+            if ( ! $module->widgets) {
                 continue;
             }
             foreach ($module->widgets as $widgetClass) {
                 app($widgetClass)->boot();
             }
         }
+    }
+
+    /**
+     * Require necessary assets
+     */
+    private function requireAssets()
+    {
+        $this->assetPipeline->requireJs('lodash.js');
+        $this->assetPipeline->requireJs('jquery-ui-core.js');
+        $this->assetPipeline->requireJs('jquery-ui-widget.js');
+        $this->assetPipeline->requireJs('jquery-ui-mouse.js');
+        $this->assetPipeline->requireJs('jquery-ui-draggable.js');
+        $this->assetPipeline->requireJs('jquery-ui-resizable.js');
+        $this->assetPipeline->requireJs('gridstack.js');
+        $this->assetPipeline->requireCss('gridstack.css')->before('asgard.css');
     }
 }
