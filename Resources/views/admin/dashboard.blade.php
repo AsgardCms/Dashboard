@@ -127,7 +127,7 @@
                         x = node.options === undefined ? node.x : node.options.x,
                         y = node.options === undefined ? node.y : node.options.y,
                         width = node.options === undefined ? node.width : node.options.width,
-                        height = node.options === undefined ? node.heigth : node.options.heigth;
+                        height = node.options === undefined ? node.height : node.options.height;
 
                     this.grid.add_widget(element, x, y, width, height);
 
