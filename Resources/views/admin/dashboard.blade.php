@@ -60,8 +60,7 @@
             /** savey crap */
             new function () {
                 this.defaultWidgets = {!! json_encode($widgets) !!};
-                this.serialized_data = {!! $customWidgets ? $customWidgets : json_encode($widgets) !!};
-                //console.log(this.serialized_data, this.defaultWidgets);
+                this.serialized_data = {!! $customWidgets !== 'null' ? $customWidgets : json_encode($widgets) !!};
                 //console.log(this.defaultWidgets.PostsWidget);
                 this.grid = jQuery('.grid-stack').data('gridstack');
                 this.load_grid = function () {
