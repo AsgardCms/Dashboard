@@ -50,7 +50,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             var options = {
-                cell_height: 80,
                 vertical_margin: 10,
                 float: true,
                 animate: true
