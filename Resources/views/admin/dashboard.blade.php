@@ -6,7 +6,7 @@
     </h1>
     <div class="btn-group pull-right">
         <a class="btn btn-default" id="edit-grid" data-mode="0" href="#">Edit Grid</a>
-        <a class="btn btn-default" id="add-widget" data-toggle="modal" data-target="#myModal">Add Widget</a>
+        <a class="btn btn-default hidden" id="add-widget" data-toggle="modal" data-target="#myModal">Add Widget</a>
     </div>
     <div class="clearfix"></div>
 @stop
