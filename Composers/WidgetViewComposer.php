@@ -7,7 +7,7 @@ class WidgetViewComposer
     /**
      * @var array
      */
-    private $subViews;
+    private $subViews = [];
 
     /**
      * @param View $view
