@@ -32,7 +32,9 @@ abstract class BaseWidget
     abstract protected function name();
 
     /**
-     * Get the widget type
+     * Get the widget options
+     * Possible options:
+     *  x, y, width, height
      * @return string
      */
     abstract protected function options();
