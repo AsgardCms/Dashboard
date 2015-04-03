@@ -23,8 +23,6 @@ abstract class BaseWidget
                 ->addSubView($this->name(), $html)
                 ->addWidgetOptions($this->name(), $this->options());
         }
-
-        $view->composer('dashboard::admin.dashboard', 'Modules\Dashboard\Composers\WidgetViewComposer');
     }
 
     /**

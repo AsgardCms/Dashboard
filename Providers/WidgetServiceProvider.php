@@ -12,5 +12,7 @@ class WidgetServiceProvider extends ServiceProvider
         $this->app->singleton('Modules\Dashboard\Composers\WidgetViewComposer', function () {
             return new WidgetViewComposer();
         });
+
+        $this->app['view']->composer('dashboard::admin.dashboard', 'Modules\Dashboard\Composers\WidgetViewComposer');
     }
 }
