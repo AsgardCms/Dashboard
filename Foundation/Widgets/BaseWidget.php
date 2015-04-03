@@ -18,10 +18,12 @@ abstract class BaseWidget
                          ->with($this->data())
                          ->render();
 
+            $sluggedName = str_slug($this->name());
+
             $widgetViewComposer
-                ->setWidgetName($this->name())
-                ->addSubView($this->name(), $html)
-                ->addWidgetOptions($this->name(), $this->options());
+                ->setWidgetName($sluggedName)
+                ->addSubView($sluggedName, $html)
+                ->addWidgetOptions($sluggedName, $this->options());
         }
     }
 
