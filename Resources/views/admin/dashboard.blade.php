@@ -2,11 +2,12 @@
 
 @section('content-header')
     <h1 class="pull-left">
-        Dashboard
+        {{ trans('dashboard::dashboard.name') }}
     </h1>
     <div class="btn-group pull-right">
-        <a class="btn btn-default" id="edit-grid" data-mode="0" href="#">Edit Grid</a>
-        <a class="btn btn-default hidden" id="add-widget" data-toggle="modal" data-target="#myModal">Add Widget</a>
+        <a class="btn btn-default" id="edit-grid" data-mode="0" href="#">{{ trans('dashboard::dashboard.edit grid') }}</a>
+        <a class="btn btn-default" id="edit-grid" data-mode="0" href="#">{{ trans('dashboard::dashboard.reset grid') }}</a>
+        <a class="btn btn-default hidden" id="add-widget" data-toggle="modal" data-target="#myModal">{{ trans('dashboard::dashboard.add widget') }}</a>
     </div>
     <div class="clearfix"></div>
 @stop
@@ -34,7 +35,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Add widget to dashboard</h4>
+                    <h4 class="modal-title" id="myModalLabel">{{ trans('dashboard::dashboard.add widget to dashboard') }}</h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">

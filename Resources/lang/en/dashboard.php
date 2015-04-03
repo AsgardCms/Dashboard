@@ -1,6 +1,9 @@
 <?php
 
 return [
-    'name'            => 'Dashboard',
-    'welcome-message' => 'Welcome on your admin dashboard',
+    'name' => 'Dashboard',
+    'edit grid' => 'Edit grid',
+    'reset grid' => 'Reset grid',
+    'add widget' => 'Add widget',
+    'add widget to dashboard' => 'Add widget to dashboard',
 ];
