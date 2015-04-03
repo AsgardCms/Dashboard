@@ -13,6 +13,9 @@
 
 @section('styles')
     <style>
+        .grid-stack-item {
+            padding-right: 20px !important;
+        }
     </style>
 @stop
 
