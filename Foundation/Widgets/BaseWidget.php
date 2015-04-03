@@ -32,10 +32,10 @@ abstract class BaseWidget
     abstract protected function name();
 
     /**
-     * Get the widget options
+     * Return an array of widget options
      * Possible options:
      *  x, y, width, height
-     * @return string
+     * @return array
      */
     abstract protected function options();
 
@@ -47,7 +47,7 @@ abstract class BaseWidget
 
     /**
      * Get the widget data to send to the view
-     * @return string
+     * @return array
      */
     abstract protected function data();
 }
