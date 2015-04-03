@@ -68,6 +68,14 @@ class DashboardController extends AdminBaseController
     }
 
     /**
+     * Reset the grid for the current user
+     */
+    public function reset()
+    {
+
+    }
+
+    /**
      * Boot widgets for all enabled modules
      * @param Repository $modules
      */
