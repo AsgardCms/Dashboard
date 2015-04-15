@@ -1,8 +1,8 @@
 <?php namespace Modules\Dashboard\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Modules\Dashboard\Repositories\Cache\CacheWidgetDecorator;
 use Modules\Dashboard\Entities\Widget;
+use Modules\Dashboard\Repositories\Cache\CacheWidgetDecorator;
 use Modules\Dashboard\Repositories\Eloquent\EloquentWidgetRepository;
 
 class DashboardServiceProvider extends ServiceProvider
