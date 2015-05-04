@@ -111,6 +111,7 @@ class DashboardController extends AdminBaseController
         $this->assetPipeline->requireJs('jquery-ui-draggable.js');
         $this->assetPipeline->requireJs('jquery-ui-resizable.js');
         $this->assetPipeline->requireJs('gridstack.js');
+        $this->assetPipeline->requireJs('chart.js');
         $this->assetPipeline->requireCss('gridstack.css')->before('asgard.css');
     }
 }
