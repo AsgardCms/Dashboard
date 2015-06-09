@@ -7,5 +7,5 @@ return [
     'add widget' => 'Aggiungi widget',
     'add widget to dashboard' => 'Aggiungi widget alla dashboard',
     'reset not needed' => 'La dashboard non ha bisogno di reset',
-    'dashboard reset' => 'La dashboard è stata resettata',
+    'dashboard reset' => 'La dashboard Ã¨ stata resettata',
 ];
