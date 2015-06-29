@@ -12,6 +12,7 @@ class CreateWidgetsTable extends Migration
     public function up()
     {
         Schema::create('dashboard__widgets', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->text('widgets');
