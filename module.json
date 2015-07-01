@@ -11,7 +11,5 @@
         "Modules\\Dashboard\\Providers\\RouteServiceProvider",
         "Modules\\Dashboard\\Providers\\WidgetServiceProvider"
     ],
-    "files": [
-        "start.php"
-    ]
+    "files": []
 }
