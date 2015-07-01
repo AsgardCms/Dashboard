@@ -8,8 +8,7 @@
 
 ## Resources
 
-- [View the changelog](CHANGELOG.md)
-- [Contribute to AsgardCMS](CONTRIBUTING.md)
+- [Contribute to AsgardCMS](https://asgardcms.com/en/docs/getting-started/contributing)
 - [License](LICENSE.md)
 
 
