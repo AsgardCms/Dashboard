@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Dashboard
 versions:
+    "1.2.0":
+       changed:
+           - Use route helper functions
     "1.1.0":
        changed:
            - Adding table engine into migrations
