@@ -4,7 +4,7 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/asgardcms/dashboard.svg?style=flat-square)](https://scrutinizer-ci.com/g/asgardcms/dashboard)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/3616f9d8-1e5c-46c6-9058-13e916851254.svg)](https://insight.sensiolabs.com/projects/3616f9d8-1e5c-46c6-9058-13e916851254)
-[![CodeClimate](https://img.shields.io/codeclimate/github/AsgardCms/Blog.svg)](https://codeclimate.com/github/AsgardCms/Blog)
+[![CodeClimate](https://img.shields.io/codeclimate/github/AsgardCms/Dashboard.svg)](https://codeclimate.com/github/AsgardCms/Dashboard)
 
 [![Total Downloads](https://img.shields.io/packagist/dd/asgardcms/dashboard-module.svg?style=flat-square)](https://packagist.org/packages/asgardcms/dashboard-module)
 [![Total Downloads](https://img.shields.io/packagist/dm/asgardcms/dashboard-module.svg?style=flat-square)](https://packagist.org/packages/asgardcms/dashboard-module)
