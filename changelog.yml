@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Dashboard
 versions:
+    "1.2.1":
+        changed:
+            - Adding correct active class on dashboard sidebar item
     "1.2.0":
        changed:
            - Use route helper functions
