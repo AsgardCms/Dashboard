@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Dashboard
 versions:
+    "1.3.0":
+        added:
+            - Added Brazilian Portuguese translations
     "1.2.1":
         changed:
             - Adding correct active class on dashboard sidebar item
