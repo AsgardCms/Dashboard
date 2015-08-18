@@ -18,7 +18,7 @@ class CreateWidgetsTable extends Migration
             $table->text('widgets');
 
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on(config('auth.table'))->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on(config('auth.table', 'users'))->onDelete('cascade');
         });
     }
 
