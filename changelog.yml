@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Dashboard
 versions:
+    "1.6.0":
+        added:
+            - Chinese Simplified translation
     "1.5.0":
         added:
             - Dutch and Portuguese language
