@@ -108,7 +108,7 @@
                                 this.grid.resizable(el, true);
                             }.bind(this));
                         }, this);
-                        jQuery('#edit-grid').data('mode', 1).text('Save Grid');
+                        jQuery('#edit-grid').data('mode', 1).text('{{ trans('dashboard::dashboard.save grid') }}');
                     } else {
                         // disable all the grid editing
                         _.map(jQuery('.grid-stack > .grid-stack-item:visible'), function (el) {
@@ -116,7 +116,7 @@
                             this.grid.resizable(el, false);
                             jQuery(el).off('dblclick');
                         }, this);
-                        jQuery('#edit-grid').data('mode', 0).text('Edit Grid');
+                        jQuery('#edit-grid').data('mode', 0).text('{{ trans('dashboard::dashboard.edit grid') }}');
                         // run the save mech
                         this.save_grid();
                     }
