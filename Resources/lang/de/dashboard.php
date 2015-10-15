@@ -2,10 +2,10 @@
 
 return [
     'name' => 'Dashboard',
-    'edit grid' => 'Gitter bearbeiten',
-    'reset grid' => 'Rücksetz Gitter',
+    'edit grid' => 'Ansicht bearbeiten',
+    'reset grid' => 'Ansicht zurücksetzen',
     'add widget' => 'Widget hinzufügen',
-    'add widget to dashboard' => 'Hinzufügen Widget ins Dashboard',
-    'reset not needed' => 'Dashboard brauchen keine Zurücksetzen',
-    'dashboard reset' => 'Dashboard zurückgesetzt wurde',
+    'add widget to dashboard' => 'Widget ins Dashboard hinzufügen',
+    'reset not needed' => 'Die Ansicht ist bereits auf dem Standartwert',
+    'dashboard reset' => 'Dashboard wurde zurückgesetzt',
 ];
