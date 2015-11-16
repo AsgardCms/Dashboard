@@ -47,6 +47,7 @@
 @stop
 
 @section('scripts')
+    @parent
     <script type="text/javascript">
         $(document).ready(function () {
             var options = {
