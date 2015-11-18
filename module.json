@@ -3,7 +3,7 @@
     "alias": "dashboard",
     "description": "The module responsible for the admin dashboard page.",
     "keywords": [],
-    "version": "1.7.0",
+    "version": "1.7.1",
     "active": 1,
     "order": 1,
     "providers": [

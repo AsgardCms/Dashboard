@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Dashboard
 versions:
+    "1.7.1":
+        changed:
+            - Injecting the parent script from partial
     "1.7.0":
         added:
             - Added Russian translations
