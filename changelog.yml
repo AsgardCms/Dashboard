@@ -2,7 +2,7 @@ url: https://github.com/AsgardCms/Dashboard
 versions:
     "1.8.0":
         changed:
-            - Removed language files, they are not in the translation module
+            - Removed language files, they are now in the translation module
     "1.7.1":
         changed:
             - Injecting the parent script from partial
