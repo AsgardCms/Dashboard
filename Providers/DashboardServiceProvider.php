@@ -4,6 +4,7 @@ use Illuminate\Support\ServiceProvider;
 use Modules\Dashboard\Entities\Widget;
 use Modules\Dashboard\Repositories\Cache\CacheWidgetDecorator;
 use Modules\Dashboard\Repositories\Eloquent\EloquentWidgetRepository;
+use Modules\Workshop\Manager\StylistThemeManager;
 
 class DashboardServiceProvider extends ServiceProvider
 {
@@ -32,6 +33,22 @@ class DashboardServiceProvider extends ServiceProvider
 
                 return new CacheWidgetDecorator($repository);
             }
+        );
+    }
+    
+    public function boot(StylistThemeManager $theme)
+    {
+        $this->publishes([
+            __DIR__ . '/../Resources/views' => base_path('resources/views/asgard/dashboard'),
+        ], 'views');
+
+        $this->app['view']->prependNamespace(
+            'dashboard',
+            base_path('resources/views/asgard/dashboard')
+        );
+        $this->app['view']->prependNamespace(
+            'dashboard',
+            $theme->find(config('asgard.core.core.admin-theme'))->getPath() . '/views/modules/dashboard'
         );
     }
 
