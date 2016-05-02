@@ -34,17 +34,6 @@ class DashboardServiceProvider extends ServiceProvider
             }
         );
     }
-    
-    public function boot()
-    {
-        $this->publishes([
-            __DIR__ . '/../Resources/views' => base_path('resources/views/asgard/dashboard'),
-        ], 'views');
-        
-        $this->loadViewsFrom(base_path('Themes/'.config('asgard.core.core.admin-theme').'/views/modules/dashboard'), 'dashboard');
-        $this->loadViewsFrom(base_path('resources/views/asgard/dashboard'), 'dashboard');
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'dashboard');
-    }
 
     /**
      * Get the services provided by the provider.
