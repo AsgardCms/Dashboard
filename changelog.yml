@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Dashboard
 versions:
+    "1.9.0":
+        changed:
+            - Allow customizing of views
     "1.8.0":
         changed:
             - Removed language files, they are now in the translation module
