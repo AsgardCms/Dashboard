@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Dashboard
 versions:
+    "1.10.0":
+        changed:
+            - Use <code>$router</code> variable in routes file
     "1.9.0":
         changed:
             - Allow customizing of views
