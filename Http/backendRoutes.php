@@ -1,8 +1,12 @@
 <?php
 
-get('/', ['as' => 'dashboard.index', 'uses' => 'DashboardController@index']);
+use Illuminate\Routing\Router;
 
-$router->group(['prefix' => '/dashboard'], function () {
-    post('grid', ['as' => 'dashboard.grid.save', 'uses' => 'DashboardController@save']);
-    get('grid', ['as' => 'dashboard.grid.reset', 'uses' => 'DashboardController@reset']);
+/** @var Router $router */
+
+$router->get('/', ['as' => 'dashboard.index', 'uses' => 'DashboardController@index']);
+
+$router->group(['prefix' => '/dashboard'], function (Router $router) {
+    $router->post('grid', ['as' => 'dashboard.grid.save', 'uses' => 'DashboardController@save']);
+    $router->get('grid', ['as' => 'dashboard.grid.reset', 'uses' => 'DashboardController@reset']);
 });
