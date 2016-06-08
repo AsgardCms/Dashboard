@@ -35,7 +35,7 @@ class DashboardServiceProvider extends ServiceProvider
             }
         );
     }
-    
+
     public function boot(StylistThemeManager $theme)
     {
         $this->publishes([
